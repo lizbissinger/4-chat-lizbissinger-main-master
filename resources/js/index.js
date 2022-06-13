@@ -89,7 +89,7 @@ sendButton.addEventListener("click", function(sendButtonClickEvent) {
 
 savebutton.addEventListener("click", function(sendButtonClickEvent){
     saveButtonClickEvent.preventDefault();
-    const save = nameInput.value;
+    const save = localStorage.getItem('user-name');
     const username = username.value;
     
     saveName(save,username);
