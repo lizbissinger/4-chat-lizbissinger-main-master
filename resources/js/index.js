@@ -96,3 +96,28 @@ savebutton.addEventListener("click", function(sendButtonClickEvent){
     username.value = "";
 
 })
+
+function validate() {
+    if(validateFields){
+        localStorage.setItem('user-name', userInput[0].value);
+      }
+   }
+  
+  function validateFields(){
+   var retVal = false;
+   var userInput = document.querySelectorAll("name-input");
+    var regex = /[^a-z|^A-Z|^0-9|^\s^\w+^\"']/;
+   for(var i = 0; i < userInput.length; i++) {
+      if(userInput[i].value === "") {
+        alert("Please fill all required fields!");
+        break;
+      }
+      else if(userInput[i].value.match(regex)) {
+        alert("Please use an appropriate symbols!");
+        break;
+      }else{
+        retval = true;
+      }
+    }
+   return username.value;
+  }
